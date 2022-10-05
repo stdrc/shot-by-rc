@@ -1,0 +1,19 @@
+[site]
+title = "Shot By RC"
+subtitle = "Photographs shot by RC."
+author = "Richard Chien"
+copyright_year = "2022"
+timezone = "Asia/Shanghai"
+language = "zh-Hans"
+
+[config]
+google_analytics_enabled = false
+google_analytics_id = ""
+
+[[config.mappings]]
+title = "Photos"
+path = "/photos/"
+index_url = "/"
+index_template = "gallery-square"
+detail_url = "/photos/"
+detail_template = "detail"

@@ -1,0 +1,4 @@
+{% for mapping in global.config.mappings %}
+<li><a href="{{ url_for(mapping.index_url or mapping.path) }}">{{ mapping.title }}</a></li>
+{% endfor %}
+<li><a href="https://stdrc.cc" target="_blank">Blog</a></li>

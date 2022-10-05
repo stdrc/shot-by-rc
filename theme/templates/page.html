@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+{{ super() }}
+<title>{{ entry.title }} - {{ global.site.title }}</title>
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+{% endblock %}
+
+{% block main %}
+<main class="main page">
+  <article class="entry">
+    <div class="meta">
+      <img src="{{ full_url(entry.cover) }}" class="cover">
+    </div>
+    <div class="content">
+      <h1 class="title"">{{ entry.title }}</h1>
+      {{ entry.content | safe }}
+    </div>
+  </article>
+</main>
+{% endblock %}
+
+{% block foot %}
+{{ super() }}
+<script>
+  // enable medium-zoom for all images
+  mediumZoom(document.querySelectorAll('.entry img'));
+</script>
+{% endblock %}

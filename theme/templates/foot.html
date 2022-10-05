@@ -1,0 +1,11 @@
+<script>
+  let navLinks = Array.from(document.querySelectorAll(".nav li a"))
+    .sort((a, b) => b.href.length - a.href.length);
+  for (let navLink of navLinks) {
+    console.log(navLink.href);
+    if (window.location.href.startsWith(navLink.href)) {
+      navLink.classList.add("active");
+      break;
+    }
+  }
+</script>

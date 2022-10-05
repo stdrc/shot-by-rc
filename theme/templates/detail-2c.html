@@ -1,0 +1,23 @@
+{% extends 'page.html' %}
+
+{% block main %}
+<main class="main detail detail-2c">
+  <article class="entry">
+    <div class="meta">
+      <h1 class="title">{{ entry.title }}</h1>
+      {% set sep = '<hr />\n<hr />' %}
+      {% if sep in entry.content %}
+      {% set summary, content = entry.content.split(sep, maxsplit=1) %}
+      {% else %}
+      {% set summary, content = '', entry.content %}
+      {% endif %}
+      <div class="summary">
+        {{ summary | safe }}
+      </div>
+    </div>
+    <div class="content">
+      {{ content | safe }}
+    </div>
+  </article>
+</main>
+{% endblock %}

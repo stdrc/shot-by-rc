@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html {%- if global.site.language %} lang="{{ global.site.language }}" {%- endif %}>
+
+<head>
+  {% block head %}
+  {% include ['custom/head.html', 'head.html'] ignore missing %}
+  {% endblock %}
+</head>
+
+{% macro full_url(rel) %}
+{% set root = url_for('/')[:-1] %}
+{% if rel.startswith('/') %}{{ root }}{% endif %}{{ rel }}
+{% endmacro %}
+
+<body>
+  <div class="container">
+    <header class="header">
+      {% include ['custom/header.html', 'header.html'] ignore missing %}
+    </header>
+    {% block main %}{% endblock %}
+    <footer class="footer">
+      {% include ['custom/footer.html', 'footer.html'] ignore missing %}
+    </footer>
+  </div>
+  {% block foot %}
+  {% include ['custom/foot.html', 'foot.html'] ignore missing %}
+  {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+<div class="site-title">
+  <h1><a href="{{ url_for('/') }}">Shot By RC</a></h1>
+</div>
+
+<nav class="nav">
+  <ul>
+    {% include ['custom/nav.html', 'nav.html'] ignore missing %}
+  </ul>
+</nav>
