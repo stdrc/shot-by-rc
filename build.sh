@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-purepress build --url-root=https://www.amandaninjiarts.com
+purepress build --url-root=https://shots.stdrc.cc
