@@ -15,7 +15,6 @@ html {
 
 body {
     width: 100%;
-    margin: 0 2%;
 
     display: flex;
     flex-direction: column;
@@ -24,6 +23,12 @@ body {
 
     background-color: black;
     color: #eee;
+}
+
+@media screen and (min-width: 501px) {
+    body {
+        margin: 0 1em;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -106,25 +111,14 @@ body {
 }
 
 .gallery .entries {
-    column-count: 3;
-    column-gap: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .gallery .entry {
     width: 100%;
     break-inside: avoid;
-    margin-bottom: 1em;
-}
-
-@media screen and (max-width: 500px) {
-    .gallery .entries {
-        column-count: 1;
-        column-gap: 0;
-    }
-
-    .gallery .entry {
-        margin-bottom: 0;
-    }
 }
 
 .gallery .entry a.img-link {
@@ -180,38 +174,49 @@ body {
 }
 
 @media screen and (min-width: 501px) {
-    .gallery.square .entries {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+    .gallery .entries {
         gap: 1em;
     }
 
-    .gallery.square .entry {
-        position: relative;
-        width: calc(33.33% - 1em);
-        margin-bottom: 0;
-    }
-
-    .gallery.square .entry::after {
-        content: "";
-        display: block;
-        padding-bottom: 100%;
-    }
-
-    .gallery.square .entry a.img-link {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-    }
-
-    .gallery.square .entry a.img-link img {
-        height: 100%;
-        object-fit: cover;
+    .gallery .entry {
+        /* 2 cols, 1 gaps */
+        width: calc((100% - 1em) / 2);
     }
 }
+
+@media screen and (min-width: 641px) {
+    .gallery .entry {
+        /* 3 cols, 2 gaps */
+        width: calc((100% - 2em) / 3);
+    }
+}
+
+/* >>> make images square */
+
+.gallery .entry {
+    position: relative;
+}
+
+.gallery .entry::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.gallery .entry a.img-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.gallery .entry a.img-link img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* <<< make images square */
 
 .detail .entry {
     display: flex;
