@@ -15,6 +15,11 @@
     <div class="content">
       <h1 class="title">{{ entry.title }}</h1>
       {{ entry.content | safe }}
+      {% if global.config.disqus_enabled %}
+      <div class="discuss">
+        {% include 'discuss/disqus.html' %}
+      </div>
+      {% endif %}
     </div>
   </article>
 </main>
