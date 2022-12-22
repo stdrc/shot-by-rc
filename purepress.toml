@@ -7,8 +7,7 @@ timezone = "Asia/Shanghai"
 language = "zh-Hans"
 
 [config]
-google_analytics_enabled = false
-google_analytics_id = ""
+
 
 [[config.mappings]]
 title = "Photos"
