@@ -5,6 +5,15 @@
   <article class="entry">
     <div class="meta">
       <h1 class="title">{{ entry.title }}</h1>
+      {% if entry.created %}
+      <time class="created" datetime="{{ entry.created }}">
+        <span class="year">{{ entry.created.year }}</span>
+        <span class="sep">/</span>
+        <span class="month">{{ entry.created.month }}</span>
+        <span class="sep">/</span>
+        <span class="day">{{ entry.created.day }}</span>
+      </time>
+      {% endif %}
       {% set sep = '<hr />\n<hr />' %}
       {% if sep in entry.content %}
       {% set summary, content = entry.content.split(sep, maxsplit=1) %}
