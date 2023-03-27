@@ -1,6 +1,7 @@
 ---
 created: 2022-01-03
 cover: /static/photos/2022-01-03/IMG_1727.thumb.jpeg
+location: 上海
 ---
 
 # 上海市人民政府
