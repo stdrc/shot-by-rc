@@ -229,6 +229,7 @@ body {
     margin-bottom: 0.2em;
 }
 
+.detail .entry .location,
 .detail .entry .created {
     font-size: 1.2em;
     color: #b4aba9;

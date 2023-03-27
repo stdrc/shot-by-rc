@@ -5,6 +5,12 @@
   <article class="entry">
     <div class="meta">
       <h1 class="title">{{ entry.title }}</h1>
+      {% if entry.location %}
+      <div class="location">
+        <span class="at">@</span>
+        <span class="location-text">{{ entry.location }}</span>
+      </div>
+      {% endif %}
       {% if entry.created %}
       <time class="created" datetime="{{ entry.created }}">
         <span class="year">{{ entry.created.year }}</span>
